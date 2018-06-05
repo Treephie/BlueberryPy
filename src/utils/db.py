@@ -12,7 +12,7 @@ DB_PASSWORD = CONFIG.get('db', 'password')
 DB_CHARSET = CONFIG.get('db', 'charset')
 
 
-class DB:
+class DB(object):
     def __init__(self):
         self.conn = pymysql.connect(host=DB_HOST,
                                     port=DB_PORT,

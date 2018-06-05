@@ -1,6 +1,6 @@
 # coding: utf-8
 from selenium.webdriver.common.by import By
-from src.test.common.page import Page
+from src.uitest.common.page import Page
 
 
 class LoginPage(Page):

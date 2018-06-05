@@ -3,7 +3,7 @@
 测试登录的各种异常情况
 """
 import unittest
-from src.test.page.login_page import LoginPage
+from src.uitest.page.login_page import LoginPage
 from src.utils.config import DATA_PATH
 from src.utils.log import logger
 from public import login

@@ -3,6 +3,7 @@ import os
 import logging
 from logging.handlers import TimedRotatingFileHandler
 from config import Config, LOG_PATH
+from src.utils import excel
 
 
 CONFIG = Config()
@@ -10,6 +11,7 @@ CONFIG = Config()
 LOGGING_FILENAME = CONFIG.get('logging', 'filename')
 LOGGING_SUFFIX = CONFIG.get('logging', 'suffix')
 LOGGING_WHEN = CONFIG.get('logging', 'when')
+LOGGING_LEVEL = CONFIG.get('logging', 'level')
 LOGGING_INTERVAL = CONFIG.getint('logging', 'interval')
 LOGGING_BACKUPCOUNT = CONFIG.getint('logging', 'backupcount')
 LOGGING_DATEFMT = CONFIG.get('logging', 'datefmt')
@@ -34,7 +36,7 @@ def init_logger():
         os.makedirs(filename_directory)
     filename = os.path.join(filename_directory, LOGGING_FILENAME)
     filehandler = TimedRotatingFileHandler(filename, when=LOGGING_WHEN, interval=LOGGING_INTERVAL, backupCount=LOGGING_BACKUPCOUNT)
-    filehandler.setLevel(logging.INFO)
+    filehandler.setLevel(LOGGING_LEVEL)
     filehandler.suffix = LOGGING_SUFFIX
     formatter = logging.Formatter(fmt=LOGGING_FMT, datefmt=LOGGING_DATEFMT)
     filehandler.setFormatter(formatter)

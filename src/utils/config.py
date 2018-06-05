@@ -9,7 +9,8 @@ DATA_PATH = BASE_PATH + '\data\\'
 DRIVER_PATH = BASE_PATH + '\drivers\\'
 LOG_PATH = BASE_PATH + '\logs\\'
 REPORT_PATH = BASE_PATH + '\\report\\'
-CASE_PATH = BASE_PATH + '\\src\\test\case\\'
+CASE_PATH = BASE_PATH + '\\src\\uitest\case\\'
+API_CASE_PATH = BASE_PATH + '\\src\\apitest\\'
 
 
 class Config:

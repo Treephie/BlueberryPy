@@ -9,7 +9,7 @@ from time import sleep
 from po.mail_po import MailPage
 from selenium import webdriver
 
-from src.test.case.public import login
+from src.uitest.case.public import login
 
 # 读取测试文件
 dom = xml.dom.minidom.parse('../data/login_data.xml')

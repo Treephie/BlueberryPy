@@ -76,7 +76,7 @@ Version 0.8.2
 
 Version in 0.8.1
 * Validated XHTML (Wolfgang Borgert).
-* Added description of test classes and test cases.
+* Added description of uitest classes and uitest cases.
 
 Version in 0.8.0
 * Define Template_mixin class for customization.
@@ -623,7 +623,7 @@ class HTMLTestRunner(Template_mixin):
 
 
     def run(self, test):
-        "Run the given test case or test suite."
+        "Run the given uitest case or uitest suite."
         result = _TestResult(self.verbosity)
         test(result)
         self.stopTime = datetime.datetime.now()
@@ -798,16 +798,16 @@ class HTMLTestRunner(Template_mixin):
 # Facilities for running tests from the command line
 ##############################################################################
 
-# Note: Reuse unittest.TestProgram to launch test. In the future we may
+# Note: Reuse unittest.TestProgram to launch uitest. In the future we may
 # build our own launcher to support more specific command line
-# parameters like test title, CSS, etc.
+# parameters like uitest title, CSS, etc.
 class TestProgram(unittest.TestProgram):
     """
     A variation of the unittest.TestProgram. Please refer to the base
     class for command line parameters.
     """
     def runTests(self):
-        # Pick HTMLTestRunner as the default test runner.
+        # Pick HTMLTestRunner as the default uitest runner.
         # base class's testRunner parameter is not useful because it means
         # we have to instantiate HTMLTestRunner before we know self.verbosity.
         if self.testRunner is None:

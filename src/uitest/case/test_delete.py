@@ -8,7 +8,7 @@ from time import sleep
 
 from selenium import webdriver
 
-from src.test.case.public import login
+from src.uitest.case.public import login
 
 # 读取测试文件
 dom = xml.dom.minidom.parse('../data/login_data.xml')
